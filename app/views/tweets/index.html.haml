@@ -1,0 +1,8 @@
+%p Привет малыш
+%p Aide-toi et le ciel t’aidera.
+
+.contents.row
+  - @tweets.each do |tweet|
+    .content_post{:style => "background-image: url(#{tweet.image});"}
+      = simple_format(tweet.text)
+      %span.name= tweet.name
