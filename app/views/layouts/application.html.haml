@@ -23,7 +23,9 @@
     %header.header
       .header__bar.row
         %h1.grid-6
+          %norb
           %a{:href => "/"} PicTweet
+          = current_user.nickname
         - if user_signed_in?
           .user_nav.grid-6
             = link_to "ログアウト", destroy_user_session_path, method: :delete
