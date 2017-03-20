@@ -23,4 +23,5 @@ class User < ActiveRecord::Base
   # ログインに何度も失敗すると、アカウントをロックすることができる機能です。こちらの機能もセキュリティ面で向上が期待できますね。
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :tweets
 end

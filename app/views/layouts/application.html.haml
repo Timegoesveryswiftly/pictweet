@@ -25,10 +25,14 @@
         %h1.grid-6
           %norb
           %a{:href => "/"} PicTweet
-          = current_user.nickname
         - if user_signed_in?
           .user_nav.grid-6
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            %span
+              = current_user.nickname
+              %ul.user__info
+                %li
+                  %a{:href => "/users/#{current_user.id}"} マイページ
+                  = link_to "ログアウト", destroy_user_session_path, method: :delete
             %a.post{:href => "/tweets/new"} 投稿する
         - else
           .grid-6
